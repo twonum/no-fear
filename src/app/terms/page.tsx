@@ -38,9 +38,9 @@ export default function TermsAndConditions() {
           3. Limitations
         </h2>
         <p className="text-gray-300 mb-4">
-          This application is provided "as-is" without warranties of any kind,
-          express or implied. AI Vision is not liable for any damages or misuse
-          of the application.
+          This application is provided as-is&quot; without warranties of any
+          kind, express or implied. AI Vision is not liable for any damages or
+          misuse of the application.
         </p>
 
         <h2 className="text-2xl font-semibold text-gray-100 mt-6 mb-4">

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Text, Link, Button } from "@chakra-ui/react";
+import { Box, Text, Link } from "@chakra-ui/react";
 import { Home } from "lucide-react";
 import React from "react";
 

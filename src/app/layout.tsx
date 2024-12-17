@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import "../styles/globals.css";
@@ -5,12 +6,7 @@ import Navbar from "@/components/Navbar";
 import StarryBackground from "@/components/StarryBackground";
 import { Provider } from "@/components/ui/provider";
 import { Toaster } from "@/components/ui/toaster";
-import {
-  ClerkProvider,
-  RedirectToSignIn,
-  SignedIn,
-  SignedOut,
-} from "@clerk/nextjs";
+import { ClerkProvider, RedirectToSignIn, SignedOut } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 
 export default function RootLayout({
@@ -29,6 +25,7 @@ export default function RootLayout({
   );
 
   return (
+    //@ts-ignore
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body>

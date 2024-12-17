@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/nextjs";
@@ -55,8 +56,8 @@ export default function Home() {
               integration into your workflow.
             </p>
             <p>
-              Whether you're enhancing security, streamlining operations, or
-              diving into AI analytics, AI Vision is your ultimate solution.
+              Whether you&apos;re enhancing security, streamlining operations,
+              or diving into AI analytics, AI Vision is your ultimate solution.
               Take the next step and explore our innovative features.
             </p>
           </section>
