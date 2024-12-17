@@ -62,18 +62,24 @@ const Navbar = () => {
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          {["Home", "About", "Contact", "Dev"].map((item, index) => (
-            <li key={index} className="text-center lg:text-left group relative">
-              <Link
-                href={`/${item.toLowerCase()}`}
-                className="block px-4 py-2 lg:py-0 text-white font-medium transform transition-all duration-300 group-hover:scale-105"
+          {["Home", "About", "Contact", "Dev"].map((item, index) => {
+            const href = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+            return (
+              <li
+                key={index}
+                className="text-center lg:text-left group relative"
               >
-                {item}
-                {/* Glowing Effect */}
-                <span className="absolute bottom-0 left-1/2 w-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 group-hover:w-full group-hover:left-0 transition-all duration-500 rounded-full"></span>
-              </Link>
-            </li>
-          ))}
+                <Link
+                  href={href}
+                  className="block px-4 py-2 lg:py-0 text-white font-medium transform transition-all duration-300 group-hover:scale-105"
+                >
+                  {item}
+                  {/* Glowing Effect */}
+                  <span className="absolute bottom-0 left-1/2 w-0 h-1 bg-slate-100 opacity-0 group-hover:opacity-100 group-hover:w-full group-hover:left-0 transition-all duration-500 rounded-full"></span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Right Side: User Actions */}
