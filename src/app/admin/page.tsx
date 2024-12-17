@@ -4,11 +4,7 @@ import { Box, Text, Link } from "@chakra-ui/react";
 import { Home } from "lucide-react";
 import React from "react";
 
-// Importing useRouter for navigation
-
-// assuming you have a starry background component
-
-export const AdminPage = () => {
+const AdminPage = () => {
   const handleBackClick = () => {
     window.history.back();
   };
@@ -27,7 +23,7 @@ export const AdminPage = () => {
         onClick={handleBackClick}
         className="absolute top-8 left-8 flex items-center space-x-2 text-white hover:text-black transition duration-300 text-lg z-[1001]"
       >
-        <Home size={24} className="text-white" /> {/* Home Icon */}
+        <Home size={24} className="text-white" />
         <span className="relative">
           <span className="underline decoration-transparent hover:decoration-white transition-all duration-300">
             Back
@@ -157,8 +153,6 @@ export const AdminPage = () => {
               Connect on LinkedIn
             </Link>
           </Box>
-
-          {/* Call to Action Button */}
         </Box>
 
         {/* Footer */}
