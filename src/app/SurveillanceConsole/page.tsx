@@ -14,6 +14,7 @@ import "react-circular-progressbar/dist/styles.css";
 const SurveillanceConsole = () => {
   const [isDetectionActive, setIsDetectionActive] = useState(false);
   const [category, setCategory] = useState("");
+  const [showEdiblesButton, setShowEdiblesButton] = useState(false);
   //@ts-ignore
   const handleCategorySelection = (selectedCategory) => {
     setCategory(selectedCategory);
@@ -152,40 +153,52 @@ const SurveillanceConsole = () => {
           <div className="button-container">
             <button
               className="category-button"
-              onClick={() => handleCategorySelection("Animals")}
+              onClick={() => handleCategorySelection("People")}
             >
-              Animals
-            </button>
-            <button
-              className="category-button"
-              onClick={() => handleCategorySelection("Food")}
-            >
-              Food
-            </button>
-            <button
-              className="category-button"
-              onClick={() => handleCategorySelection("Furniture")}
-            >
-              Furniture
+              Human Detection
             </button>
             <button
               className="category-button"
               onClick={() => handleCategorySelection("Tools")}
             >
-              Tools
+              Firearm Equipments
             </button>
             <button
               className="category-button"
               onClick={() => handleCategorySelection("Vehicles")}
             >
-              Vehicles
+              Vehicles Detection
             </button>
             <button
               className="category-button"
-              onClick={() => handleCategorySelection("People")}
+              onClick={() => handleCategorySelection("Animals")}
             >
-              People
+              Wild Animals
             </button>
+            <button
+              className="category-button"
+              onClick={() => handleCategorySelection("Furniture")}
+            >
+              Valuable Ornaments
+            </button>
+            {/* More Detections Button */}
+            <button
+              className="more-detections-button"
+              onClick={() => setShowEdiblesButton(!showEdiblesButton)}
+            >
+              {showEdiblesButton
+                ? "Hide More Detections"
+                : "Show More Detections"}
+            </button>
+
+            {showEdiblesButton && (
+              <button
+                className="category-button"
+                onClick={() => handleCategorySelection("Food")}
+              >
+                Edibles Detection
+              </button>
+            )}
           </div>
         </div>
       ) : (
@@ -280,6 +293,7 @@ const SurveillanceConsole = () => {
           flex-wrap: wrap;
           justify-content: center;
           margin-top: 30px;
+          gap: 15px; /* Add spacing between buttons */
         }
 
         .category-button {
@@ -290,11 +304,27 @@ const SurveillanceConsole = () => {
           font-size: 1.3rem;
           border-radius: 5px;
           cursor: pointer;
-          margin: 10px;
+          width: 250px;
+          transition: all 0.3s ease;
+        }
+        .more-detections-button {
+          background: #ff9800; /* Unique orange color */
+          color: black;
+          border: 2px solid #ff9800;
+          padding: 12px 24px;
+          font-size: 1.3rem;
+          border-radius: 5px;
+          cursor: pointer;
           width: 250px;
           transition: all 0.3s ease;
         }
 
+        .more-detections-button:hover {
+          background: white;
+          color: #ff9800;
+          box-shadow: 0 0 10px #ff9800;
+          transform: scale(1.05);
+        }
         .category-button:hover {
           background: white;
           color: black;
